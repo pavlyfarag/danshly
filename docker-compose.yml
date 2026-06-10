@@ -1,0 +1,29 @@
+services:
+  web:
+    build: .
+    image: danshly/web:latest
+    container_name: danshly-web
+    restart: unless-stopped
+    # Bound to loopback only — nginx is the sole public entrypoint.
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - path: .env
+        required: false
+    # Hardened runtime: immutable filesystem, no privilege escalation,
+    # no capabilities. Next.js only needs a writable image/fetch cache.
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.next/cache
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 512m
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

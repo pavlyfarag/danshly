@@ -1,0 +1,9 @@
+/* TEAM */
+DevOps & Infrastructure: Pavly
+Full Stack Engineering:  Shery
+Chief Inspiration Officer: Daniel (age 2)
+
+/* SITE */
+Stack:   Next.js, TypeScript, Tailwind CSS
+Hosting: Self-hosted Kubernetes — our own racks
+Motto:   Engineering. Infrastructure. Ownership.
