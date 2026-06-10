@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     # Bound to loopback only — nginx is the sole public entrypoint.
     ports:
-      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3001:3000"
     env_file:
       - path: .env
         required: false

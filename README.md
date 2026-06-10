@@ -71,7 +71,7 @@ docker-compose.yml      Hardened single-service deployment
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
+npm run dev        # http://localhost:3001
 npm run typecheck  # tsc --noEmit
 npm run build      # production build (also type-checks)
 npm start          # serve the production build
@@ -125,11 +125,11 @@ env vars at all; `NEXT_PUBLIC_SITE_URL` defaults to `https://danshly.com`.
 docker compose up -d --build
 
 # 2. Verify
-curl -s http://127.0.0.1:3000/api/health
+curl -s http://127.0.0.1:3001/api/health
 docker inspect --format='{{.State.Health.Status}}' danshly-web
 ```
 
-The container binds to `127.0.0.1:3000` only; nginx is the public entrypoint.
+The container binds to `127.0.0.1:3001` only; nginx is the public entrypoint.
 
 ### nginx + Cloudflare
 
