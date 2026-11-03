@@ -1,0 +1,8 @@
+# Production settings for the homeops Komodo stack, layered over docker-compose.yml.
+# The stack builds this image on the Pi when deployed.
+services:
+  web:
+    image: homeops/danshly:main
+    platform: linux/arm64
+    env_file: !override
+      - path: /etc/homeops-stacks/danshly/.env
